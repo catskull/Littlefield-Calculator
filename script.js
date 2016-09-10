@@ -3,6 +3,7 @@
 var h1 = document.getElementsByTagName('h1')[0];
 var h2 = document.getElementsByTagName('h2')[0];
 var h3 = document.getElementsByTagName('h3')[0];
+var h4 = document.getElementsByTagName('h4')[0];
 var startTime = null;
 var endTime = null;
 var seconds = 0;
@@ -44,7 +45,8 @@ function stopper() {
     var heightInMeters = littlefieldsLaw(startTime, endTime);
     h1.textContent = heightInMeters + " meters";
     h2.textContent = (heightInMeters * 3.28084).toFixed(2) + " feet";
-    h3.textContent = "Tap again to restart"
+    h3.textContent = ((endTime - startTime)/1000).toFixed(2) + " seconds"
+    h4.textContent = "Tap again to restart"
     startTime = null;
     endTime = null;
     document.onclick = timer;
@@ -55,6 +57,7 @@ function clear() {
     h1.textContent = "00:00:00";
     h2.textContent = "";
     h3.textContent = "";
+    h4.textContent = "";
     seconds = 0; minutes = 0; hours = 0;
 }
 
